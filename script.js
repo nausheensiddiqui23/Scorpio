@@ -10,5 +10,9 @@ document.addEventListener('mousemove', (e) =>{
    
     x += dx * 0.05;
     y += dy * 0.05;
+   
+    scorpio.style.left = `${x}px`;
+    scorpio.style.top = `${y}px`;
+
 
 });
