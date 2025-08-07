@@ -20,4 +20,7 @@ function animate() {
   scorpion.style.top = `${pos.y}px`;
   scorpion.style.transform = `translate(-50%, -50%) rotate(${angle}deg)`;
 
-});
+requestAnimationFrame(animate);
+}
+
+requestAnimationFrame(animate);
