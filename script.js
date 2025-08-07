@@ -1,0 +1,1 @@
+const scorpio = document.getElementById('scorpio');
