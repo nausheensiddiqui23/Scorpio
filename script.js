@@ -7,4 +7,8 @@ document.addEventListener('mousemove', (e) =>{
     const dy = e.clientY - y;
 
     const angle = Math.atan2(dy, dx) * (180 / Math.PI);
+   
+    x += dx * 0.05;
+    y += dy * 0.05;
+
 });
