@@ -16,9 +16,8 @@ function animate() {
   const dy = mouse.y - pos.y;
   const angle = Math.atan2(dy, dx) * (180 / Math.PI);
    
-    scorpio.style.left = `${x}px`;
-    scorpio.style.top = `${y}px`;
-
-  scorpio.style.transform = `translate(-50%, -50%) rotate(${angle}deg)`;
+   scorpion.style.left = `${pos.x}px`;
+  scorpion.style.top = `${pos.y}px`;
+  scorpion.style.transform = `translate(-50%, -50%) rotate(${angle}deg)`;
 
 });
