@@ -2,9 +2,10 @@ const scorpion = document.getElementById('scorpion');
 let pos = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
 let mouse = { x: pos.x, y: pos.y };
 
-document.addEventListener('mousemove', (e) =>{
-    const dx = e.clientX - x;
-    const dy = e.clientY - y;
+document.addEventListener('mousemove', e => {
+  mouse.x = e.clientX;
+  mouse.y = e.clientY;
+});
 
     const angle = Math.atan2(dy, dx) * (180 / Math.PI);
    
