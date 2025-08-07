@@ -14,5 +14,6 @@ document.addEventListener('mousemove', (e) =>{
     scorpio.style.left = `${x}px`;
     scorpio.style.top = `${y}px`;
 
+  scorpio.style.transform = `translate(-50%, -50%) rotate(${angle}deg)`;
 
 });
