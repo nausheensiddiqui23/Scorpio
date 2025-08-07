@@ -1,13 +1,60 @@
-body {
-    margin: 0;
-    cursor: none;
-
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-#scorpion {
-  position: fixed;
-  width: 80px; height: 80px;
+
+body {
+  height: 100vh;
+  background-color: #111;
+  cursor: none;
+  overflow: hidden;
+}
+
+.scorpion-cursor {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  transform: translate(-50%, -50%);
   pointer-events: none;
-  background: url('scorpion.png') no-repeat center center / contain;
-  transition: transform 0.2s ease-out;
-  transform: translate(-50%, -50%) rotate(0deg);
+  z-index: 9999;
+}
+
+.body {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: red;
+  border-radius: 50%;
+  top: 20px;
+  left: 20px;
+  z-index: 5;
+}
+
+.claw {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background: red;
+  border-radius: 50%;
+  top: 10px;
+  z-index: 4;
+}
+
+.claw-left {
+  left: 0;
+}
+
+.claw-right {
+  right: 0;
+}
+
+.tail {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: rgba(255, 0, 0, 0.6);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 1;
 }
