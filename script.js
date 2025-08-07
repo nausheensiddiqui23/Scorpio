@@ -1,6 +1,6 @@
-const scorpio = document.getElementById('scorpio');
-let x = window.innerWidth / 2;
-let y = window.innerHeight / 2;
+const scorpion = document.getElementById('scorpion');
+let pos = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
+let mouse = { x: pos.x, y: pos.y };
 
 document.addEventListener('mousemove', (e) =>{
     const dx = e.clientX - x;
