@@ -9,9 +9,12 @@ document.addEventListener('mousemove', e => {
 
 function animate() {
   pos.x += (mouse.x - pos.x) * 0.1;
-  pos.y += (mouse.y - pos.y) * 0.1;   
-    x += dx * 0.05;
-    y += dy * 0.05;
+  pos.y += (mouse.y - pos.y) * 0.1; 
+  
+  
+  const dx = mouse.x - pos.x;
+  const dy = mouse.y - pos.y;
+  const angle = Math.atan2(dy, dx) * (180 / Math.PI);
    
     scorpio.style.left = `${x}px`;
     scorpio.style.top = `${y}px`;
