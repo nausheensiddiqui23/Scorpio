@@ -1,26 +1,19 @@
-const scorpion = document.getElementById('scorpion');
-let pos = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
-let mouse = { x: pos.x, y: pos.y };
+const cursor = document.getElementById("cursor");
+const tails = document.querySelectorAll(".tail");
+const tailPositions = Array(tails.length).fill({ x: 0, y: 0 });
 
-document.addEventListener('mousemove', e => {
-  mouse.x = e.clientX;
-  mouse.y = e.clientY;
+document.addEventListener("mousemove", (e) => {
+  cursor.style.left = e.pageX + "px";
+  cursor.style.top = e.pageY + "px";
+
+  // تحديث موقع كل ذيل بشكل تدريجي لمتابعة حركة المؤشر
+  for (let i = tails.length - 1; i >= 0; i--) {
+    if (i === 0) {
+      tailPositions[i] = { x: e.pageX, y: e.pageY };
+    } else {
+      tailPositions[i] = { x: tailPositions[i - 1].x, y: tailPositions[i - 1].y };
+    }
+    tails[i].style.left = tailPositions[i].x + "px";
+    tails[i].style.top = tailPositions[i].y + "px";
+  }
 });
-
-function animate() {
-  pos.x += (mouse.x - pos.x) * 0.1;
-  pos.y += (mouse.y - pos.y) * 0.1; 
-  
-  
-  const dx = mouse.x - pos.x;
-  const dy = mouse.y - pos.y;
-  const angle = Math.atan2(dy, dx) * (180 / Math.PI);
-   
-   scorpion.style.left = `${pos.x}px`;
-  scorpion.style.top = `${pos.y}px`;
-  scorpion.style.transform = `translate(-50%, -50%) rotate(${angle}deg)`;
-
-requestAnimationFrame(animate);
-}
-
-requestAnimationFrame(animate);
