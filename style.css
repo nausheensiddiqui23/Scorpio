@@ -35,7 +35,7 @@ body {
   position: absolute;
   width: 15px;
   height: 15px;
-  background: red;
+  background: rgb(244, 243, 243);
   border-radius: 50%;
   top: 10px;
   z-index: 4;
