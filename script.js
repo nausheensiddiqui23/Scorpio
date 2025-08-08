@@ -32,4 +32,54 @@ function updateTail() {
 function drawTail() {
   ctx.strokeStyle = 'white';
   ctx.lineWidth = 1;
-  for (let i =
+  for (let i = 0; i < segments; i++) {
+    ctx.beginPath();
+    ctx.arc(tail[i].x, tail[i].y, 5, 0, Math.PI * 2);
+    ctx.stroke();
+  }
+}
+
+function drawLegs() {
+  ctx.strokeStyle = 'white';
+  for (let i = 3; i < segments; i += 4) {
+    const p = tail[i];
+    const angle = Math.atan2(
+      tail[i - 1].y - p.y,
+      tail[i - 1].x - p.x
+    );
+    const legLength = 20;
+
+    // Left leg
+    ctx.beginPath();
+    ctx.moveTo(p.x, p.y);
+    ctx.lineTo(
+      p.x + Math.cos(angle + Math.PI / 2) * legLength,
+      p.y + Math.sin(angle + Math.PI / 2) * legLength
+    );
+    ctx.stroke();
+
+    // Right leg
+    ctx.beginPath();
+    ctx.moveTo(p.x, p.y);
+    ctx.lineTo(
+      p.x + Math.cos(angle - Math.PI / 2) * legLength,
+      p.y + Math.sin(angle - Math.PI / 2) * legLength
+    );
+    ctx.stroke();
+  }
+}
+
+function animate() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  updateTail();
+  drawTail();
+  drawLegs();
+  requestAnimationFrame(animate);
+}
+
+animate();
+
+window.addEventListener('resize', () => {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+});
