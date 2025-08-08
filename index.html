@@ -3,20 +3,26 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Scorpion Cursor</title>
+  <title>SVG Scorpion Cursor</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="scorpion-cursor" id="cursor">
-  <div class="claw claw-left"></div>
-  <div class="claw claw-right"></div>
-  <div class="body"></div>
-  <div class="tail tail-1"></div>
-  <div class="tail tail-2"></div>
-  <div class="tail tail-3"></div>
-  <div class="tail tail-4"></div>
-  <div class="tail tail-5"></div>
-</div>
+  <div id="scorpion">
+    <svg viewBox="0 0 100 100">
+      <!-- Body -->
+      <circle cx="50" cy="50" r="10" fill="red" />
+
+      <!-- Claws -->
+      <circle cx="30" cy="30" r="6" fill="red" />
+      <circle cx="70" cy="30" r="6" fill="red" />
+
+      <!-- Tail segments -->
+      <circle class="tail-circle" cx="50" cy="60" r="6" fill="rgba(255,0,0,0.8)" />
+      <circle class="tail-circle" cx="50" cy="70" r="5" fill="rgba(255,0,0,0.6)" />
+      <circle class="tail-circle" cx="50" cy="80" r="4" fill="rgba(255,0,0,0.4)" />
+      <circle class="tail-circle" cx="50" cy="90" r="3" fill="rgba(255,0,0,0.3)" />
+    </svg>
+  </div>
 
   <script src="script.js"></script>
 </body>
