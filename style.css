@@ -1,60 +1,37 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 body {
+  margin: 0;
   height: 100vh;
-  background-color: #111;
+  background: #111;
   cursor: none;
   overflow: hidden;
 }
 
-.scorpion-cursor {
+#scorpion {
   position: absolute;
-  width: 60px;
-  height: 60px;
-  transform: translate(-50%, -50%);
+  width: 100px;
+  height: 100px;
+  transform: translate(-50%, -50%) rotate(0deg);
   pointer-events: none;
   z-index: 9999;
 }
 
-.body {
-  position: absolute;
-  width: 20px;
-  height: 20px;
-  background: rgb(250, 245, 245);
-  border-radius: 50%;
-  top: 20px;
-  left: 20px;
-  z-index: 5;
+svg {
+  width: 100%;
+  height: 100%;
 }
 
-.claw {
-  position: absolute;
-  width: 15px;
-  height: 15px;
-  background: rgb(244, 243, 243);
-  border-radius: 50%;
-  top: 10px;
-  z-index: 4;
+.tail-circle {
+  transform-origin: center;
+  animation: pulse 1.5s infinite ease-in-out;
 }
 
-.claw-left {
-  left: 0;
-}
-
-.claw-right {
-  right: 0;
-}
-
-.tail {
-  position: absolute;
-  width: 10px;
-  height: 10px;
-  background-color: rgba(255, 255, 255, 0.6);
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 1;
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.6;
+  }
 }
